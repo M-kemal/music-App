@@ -4,10 +4,71 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="./css/styles.css" rel="stylesheet">
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Poppins:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
+  <!-- google fonts -->
+  <!-- font awesome cdn -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font awesome cdn -->
 </head>
-<body>
-  <h1 class="text-3xl underline text-cyan-500 font-extrabold mt-20">
-    Hello world! 
-  </h1>
+<body class="font-comfor">
+    
+    <div class="backMain h-screen w-full text-msc-light">
+        <div class="container h-screen flex justify-center items-center w-[400px]">
+           <div class="card w-96  shadow-2xl bg-white bg-opacity-20 backdrop-blur-lg rounded drop-shadow-lg">
+              <img id="music-img" class="w-96 h-80 rounded-sm" alt="">
+              <audio id="audio" src=""></audio>
+              <div id="music-details" class="flex text-center items-center justify-center font-bold py-3 bg-msc-main text-[18px]">
+                <p class="title"></p>
+                <p class="singer ml-1"></p>
+              </div>
+              <div class="card-body p-3 ">
+                <div id="progress" class="">
+                    <input type="range" name="" id="progress-bar" class="w-full cursor-pointer">
+                    <div class="times flex justify-between items-center">
+                        <span id="currentTime">0:00</span>
+                        <span id="duration">0:00</span>
+                    </div>
+                </div>
+              </div>
+              <div id="controls" class="p-2 flex items-center justify-center space-x-5 ">
+                  <button class="w-8 h-8 rounded-full bg-msc-main focus:outline-none align-middle">
+                      <i id="prev" class="fa-solid fa-backward-step text-lg"></i>
+                  </button>
+                  <button class="w-14 h-14 rounded-full bg-msc-main focus:outline-none">
+                      <i id="play" class="fa-solid fa-play text-2xl"></i>
+                  </button>
+                  <button class="w-8 h-8 rounded-full bg-msc-main focus:outline-none">
+                    <i id="next" class="fa-solid fa-forward-step text-lg"></i>
+                  </button>
+            </div>
+            <div class="card-footer mt-3 p-5 flex items-center justify-between">
+                <button>
+                    <i id="listMenu" class="fa-solid fa-list text-xl"></i>
+                </button>
+                <div class="volume-container cursor-pointer">
+                    <i id="volume" class="fa-solid fa-volume-high text-xl"></i>
+                    <input type="range" id="volume-bar" max="100" value="100" class="w-20 cursor-pointer">
+                </div>
+            </div>
+            <div id="music-list">
+                <ul class="list hidden">
+                    <!-- <li>
+                        <span>Ben Kimim ? - Candan Erçetin</span>
+                        <span>2:30</span>
+                    </li> -->
+                </ul>
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+    <script src="music.js"></script>
+    <script src="musicplayer.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>
